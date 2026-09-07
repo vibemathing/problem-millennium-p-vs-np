@@ -19,3 +19,4 @@ review_cycle: P90D
 5. 涉及用户功能时必须产出 QA 计划或验证证据。
 6. 高风险变更必须说明回滚路径。
 7. 如果发现重复错误或标准缺失，记录到 `agent-governance/agent-feedback/`。
+8. 涉及研究目标或执行编排时，按 `Project → Workflow → Task → Step → Job` 建模，并分别绑定 ProblemContract、Attempt/Route、Obligation、CandidateArtifact、Evidence 与 Result；不得把 Job 成功当作数学闭合。

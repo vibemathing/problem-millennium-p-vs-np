@@ -62,7 +62,7 @@
     "sha256": "709148f69964bdf708c9924bfd43f48970e72291f85527d74e9ceeacccb6f8fc",
     "version": "1.2.4"
   },
-  "built_at": "2026-09-07T11:11:48+08:00",
+  "built_at": "2026-09-07T16:37:49+08:00",
   "digest_excludes": [
     "HARNESS_SNAPSHOT.json",
     "HARNESS_SNAPSHOT_HISTORY.json",
@@ -1084,12 +1084,12 @@
       "sha256": "3f899616e5b8b6462d6bf3fcbc3a56be6b44a3bdc1730cf35cfc60abb67207a2"
     },
     {
-      "bytes": 9035,
+      "bytes": 10374,
       "layer": "web_channel",
       "mode": "0644",
       "owner": "harness",
       "path": "WEB_CONTEXT_BUNDLE.md",
-      "sha256": "6392294580958c5e0e1084cf2c60c4714220038e4e2bfe20e74b2c1affdf19b6"
+      "sha256": "bf60a0977250b2a7ac11e15a2ca83b9c97ea325884a1520cb1b72d2848dd09be"
     },
     {
       "bytes": 3270,
@@ -1196,12 +1196,12 @@
       "sha256": "6177c2be2c2d199fc290f2ac3f4366d49b8cdd7fa9dd1a6c32e86ce21c19e9ae"
     },
     {
-      "bytes": 647,
+      "bytes": 898,
       "layer": "research_core",
       "mode": "0644",
       "owner": "harness",
       "path": "governance/context/AGENT-ENTRY.md",
-      "sha256": "3ec4ec7f96b6be759fdc4d0bc485b0e23f79eedf3e113a4e8ee0ea3626287be3"
+      "sha256": "bf4ef2c66aab545787016665357e36897984294b91c9ced4bc6cd9f7c2e8d37e"
     },
     {
       "bytes": 1194,
@@ -1468,12 +1468,12 @@
       "sha256": "08cfe86133ca8225b3909978735af132b1fc81c88612a0d22b51c0cc16b8e00c"
     },
     {
-      "bytes": 1557,
+      "bytes": 2740,
       "layer": "problem_instance",
       "mode": "0644",
       "owner": "problem",
       "path": "problem-library/records/canonical-problems.jsonl",
-      "sha256": "e30abb1cf2f0f5b39877b895a7480943550c727f7fe4b842769dc20966179541"
+      "sha256": "2945a7f82c9d1dc6c2fddb7fe164bc7a281d6f55631913b32c2a9591d427ccab"
     },
     {
       "bytes": 3891,
@@ -1676,12 +1676,12 @@
       "sha256": "901d1a92b8ff6db9982ed3e8d6beb4301a055ea57a752868ecea5964c57a0101"
     },
     {
-      "bytes": 2031,
+      "bytes": 2620,
       "layer": "research_core",
       "mode": "0644",
       "owner": "harness",
       "path": "result-library/README.md",
-      "sha256": "716e4e5a002c8f6cc46eb07eba7698fa2c342d7458637b5ff8938396cb7f8d47"
+      "sha256": "353c2ec2387eeafe3e48ec151c029afb5a59fa234fc20db5d34b60a0ca410d6c"
     },
     {
       "bytes": 3552,
@@ -1918,28 +1918,28 @@
   ],
   "harness_version": "1.2.4",
   "problem": {
-    "admission": "preview_unadmitted",
-    "contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940",
-    "lifecycle": "draft",
-    "problem_id": "problem:template-placeholder"
+    "admission": "canonical_admitted",
+    "contract_sha256": "4aa14c7f0b817aa82b7e158a13e0954788c5619cbba11592de96bc2939824c79",
+    "lifecycle": "active",
+    "problem_id": "problem:millennium-p-vs-np"
   },
   "profile": "web-research-full",
-  "repository": "vibemathing/vibe-mathing-problem-public-template",
+  "repository": "vibemathing/problem-millennium-p-vs-np",
   "repository_identity": {
     "binding_state": "verified",
-    "database_id": 1358726712,
+    "database_id": 1359975609,
     "default_branch": "main",
-    "full_name": "vibemathing/vibe-mathing-problem-public-template",
-    "node_id": "R_kgDOUPyGOA",
+    "full_name": "vibemathing/problem-millennium-p-vs-np",
+    "node_id": "R_kgDOUQ-UuQ",
     "visibility": "public"
   },
   "schema_version": "1.1.0",
-  "snapshot_id": "harness-snapshot:template-placeholder",
+  "snapshot_id": "harness-snapshot:millennium-p-vs-np",
   "source": {
     "commit": "fedd664f1ac16c5232eb05076b73f2bab566ed67",
     "repository": "reviewed-public-export",
     "source_manifest_sha256": "fedd664f1ac16c5232eb05076b73f2bab566ed672840e7f2af851c77253813b3",
     "worktree_dirty": false
   },
-  "tree_sha256": "4cd282256d411fe493a82ef0050b5463e57339f15bd7a7c829a6f5d2fa1d0c7e"
+  "tree_sha256": "40e0f5cf878587c8e9f936a93e777af03dad285e94561d04fc9a3f223ab284fd"
 }
