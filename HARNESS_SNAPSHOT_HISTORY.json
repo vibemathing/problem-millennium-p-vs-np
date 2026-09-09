@@ -6,6 +6,13 @@
       "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1",
       "source_manifest_sha256": "fedd664f1ac16c5232eb05076b73f2bab566ed672840e7f2af851c77253813b3",
       "tree_sha256": "40e0f5cf878587c8e9f936a93e777af03dad285e94561d04fc9a3f223ab284fd"
+    },
+    {
+      "harness_snapshot_sha256": "3a1e5287aea434f6a6469939feeac5606beddf6a8edd101499c73bc51059f034",
+      "harness_version": "1.2.5",
+      "tree_sha256": "92f921ac3a6e4fe68a8efe496aa474212c974952f94b0c316800cf29da3adcfe",
+      "source_manifest_sha256": "fedd664f1ac16c5232eb05076b73f2bab566ed672840e7f2af851c77253813b3",
+      "importer_policy_sha256": "a7650a8ba5be3fef370914b24a49b1118f57dc12f41980f21b11ef2b0a8267c1"
     }
   ],
   "repository": "vibemathing/problem-millennium-p-vs-np",

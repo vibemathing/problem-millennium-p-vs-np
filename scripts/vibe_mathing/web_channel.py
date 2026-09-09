@@ -345,6 +345,51 @@ def validate_packet(root: Path, packet_path: Path) -> tuple[dict[str, Any] | Non
     return packet, errors
 
 
+
+ADMISSION_PENDING_PREFIXES = (
+    "packet attempt_id is not pre-admitted",
+    "packet graph_id does not exist",
+    "packet obligation_id does not exist in graph",
+)
+
+
+def admission_pending(root: Path, packet: dict[str, Any] | None, errors: list[str]) -> bool:
+    """部分准入判定（GATE-CUT-LOG Batch 8）：records 缺预准入时，若 packet 声明
+    admission_request 且与仓内真实 ProblemContract digest 一致，则以 pending 放行 inbox
+    校验。不产生任何证据/结果；records 仍禁写；trusted 补录 Attempt 后自然闭环。"""
+    if packet is None or not errors:
+        return False
+    for error in errors:
+        if not error.startswith(ADMISSION_PENDING_PREFIXES):
+            return False
+    request = packet.get("admission_request")
+    if not isinstance(request, dict):
+        return False
+    required = ("request_id", "graph_id", "obligation_id", "route_id", "attempt_id", "problem_contract_sha256")
+    if not all(isinstance(request.get(key), str) and request[key] for key in required):
+        return False
+    if request["graph_id"] != packet.get("graph_id"):
+        return False
+    if request["obligation_id"] != packet.get("obligation_id"):
+        return False
+    if request["route_id"] != packet.get("route_id"):
+        return False
+    if request["attempt_id"] != packet.get("attempt_id"):
+        return False
+    if not re.fullmatch(r"[A-Za-z0-9._:-]{3,120}", request["request_id"]):
+        return False
+    try:
+        problem = load_problem(root)
+    except (OSError, ValueError, json.JSONDecodeError):
+        return False
+    if request["problem_contract_sha256"] != canonical_json_sha256(problem):
+        return False
+    failed_routes = {record.get("route_id") for record in load_jsonl(root / "research/records/failed-routes.jsonl")}
+    if packet.get("route_id") in failed_routes:
+        return False
+    return True
+
+
 def packet_files(root: Path) -> list[Path]:
     inbox = root / "research/artifacts/web-inbox"
     if not inbox.exists():

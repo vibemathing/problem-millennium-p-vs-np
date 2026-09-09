@@ -33,62 +33,203 @@
     "created_at"
   ],
   "properties": {
-    "schema_version": {"const": "1.1.0"},
-    "channel": {"const": "chatgpt-web-github-issue-pr-writer"},
-    "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
+    "schema_version": {
+      "const": "1.1.0"
+    },
+    "channel": {
+      "const": "chatgpt-web-github-issue-pr-writer"
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"
+    },
     "repository_identity": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["binding_state", "database_id", "node_id", "default_branch"],
+      "required": [
+        "binding_state",
+        "database_id",
+        "node_id",
+        "default_branch"
+      ],
       "properties": {
-        "binding_state": {"enum": ["planned", "verified"]},
-        "database_id": {"type": ["integer", "null"], "minimum": 1},
-        "node_id": {"type": ["string", "null"], "minLength": 1},
-        "default_branch": {"type": "string", "pattern": "^[A-Za-z0-9._/-]+$"}
+        "binding_state": {
+          "enum": [
+            "planned",
+            "verified"
+          ]
+        },
+        "database_id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "node_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "default_branch": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._/-]+$"
+        }
       },
       "allOf": [
         {
-          "if": {"properties": {"binding_state": {"const": "verified"}}, "required": ["binding_state"]},
-          "then": {"properties": {"database_id": {"type": "integer", "minimum": 1}, "node_id": {"type": "string", "minLength": 1}}}
+          "if": {
+            "properties": {
+              "binding_state": {
+                "const": "verified"
+              }
+            },
+            "required": [
+              "binding_state"
+            ]
+          },
+          "then": {
+            "properties": {
+              "database_id": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "node_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
         },
         {
-          "if": {"properties": {"binding_state": {"const": "planned"}}, "required": ["binding_state"]},
-          "then": {"properties": {"database_id": {"type": "null"}, "node_id": {"type": "null"}}}
+          "if": {
+            "properties": {
+              "binding_state": {
+                "const": "planned"
+              }
+            },
+            "required": [
+              "binding_state"
+            ]
+          },
+          "then": {
+            "properties": {
+              "database_id": {
+                "type": "null"
+              },
+              "node_id": {
+                "type": "null"
+              }
+            }
+          }
         }
       ]
     },
-    "problem_id": {"type": "string", "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"},
-    "problem_contract_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "harness_snapshot_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "base_revision": {"type": "string", "pattern": "^(?:[a-f0-9]{40}|[a-f0-9]{64})$"},
-    "importer_policy_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "attempt_id": {"type": "string", "pattern": "^attempt:[a-z0-9][a-z0-9.-]*$"},
-    "route_id": {"type": "string", "pattern": "^route:[a-z0-9][a-z0-9.-]*$"},
-    "graph_id": {"type": "string", "pattern": "^graph:[a-z0-9][a-z0-9.-]*$"},
-    "obligation_id": {"type": "string", "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"},
+    "problem_id": {
+      "type": "string",
+      "pattern": "^problem:[a-z0-9][a-z0-9.-]*$"
+    },
+    "problem_contract_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "harness_snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "base_revision": {
+      "type": "string",
+      "pattern": "^(?:[a-f0-9]{40}|[a-f0-9]{64})$"
+    },
+    "importer_policy_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^attempt:[a-z0-9][a-z0-9.-]*$"
+    },
+    "route_id": {
+      "type": "string",
+      "pattern": "^route:[a-z0-9][a-z0-9.-]*$"
+    },
+    "graph_id": {
+      "type": "string",
+      "pattern": "^graph:[a-z0-9][a-z0-9.-]*$"
+    },
+    "obligation_id": {
+      "type": "string",
+      "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"
+    },
     "generator": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["principal", "model_label", "model_fingerprint_status"],
+      "required": [
+        "principal",
+        "model_label",
+        "model_fingerprint_status"
+      ],
       "properties": {
-        "principal": {"type": "string", "minLength": 1},
-        "model_label": {"type": "string", "minLength": 1},
-        "model_fingerprint_status": {"const": "unverified"}
+        "principal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_fingerprint_status": {
+          "const": "unverified"
+        }
       }
     },
     "transport": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["branch", "issue_number", "issue_url", "pull_request_number", "pull_request_url"],
+      "required": [
+        "branch",
+        "issue_number",
+        "issue_url",
+        "pull_request_number",
+        "pull_request_url"
+      ],
       "properties": {
-        "branch": {"type": "string", "pattern": "^web/attempt-[a-z0-9][a-z0-9._/-]*$"},
-        "issue_number": {"type": "integer", "minimum": 1},
-        "issue_url": {"type": "string", "format": "uri", "pattern": "^https://github\\.com/"},
-        "pull_request_number": {"type": ["integer", "null"], "minimum": 1},
-        "pull_request_url": {"type": ["string", "null"], "format": "uri", "pattern": "^https://github\\.com/"}
+        "branch": {
+          "type": "string",
+          "pattern": "^web/attempt-[a-z0-9][a-z0-9._/-]*$"
+        },
+        "issue_number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "issue_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/"
+        },
+        "pull_request_number": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "pull_request_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "pattern": "^https://github\\.com/"
+        }
       }
     },
-    "objective": {"type": "string", "minLength": 1},
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
     "candidate_artifacts": {
       "type": "array",
       "minItems": 1,
@@ -96,12 +237,33 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["candidate_id", "kind", "locator", "sha256"],
+        "required": [
+          "candidate_id",
+          "kind",
+          "locator",
+          "sha256"
+        ],
         "properties": {
-          "candidate_id": {"type": "string", "pattern": "^candidate:[a-z0-9][a-z0-9.-]*$"},
-          "kind": {"enum": ["proof", "counterexample", "formalization", "computation"]},
-          "locator": {"type": "string", "pattern": "^research/artifacts/candidates/"},
-          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+          "candidate_id": {
+            "type": "string",
+            "pattern": "^candidate:[a-z0-9][a-z0-9.-]*$"
+          },
+          "kind": {
+            "enum": [
+              "proof",
+              "counterexample",
+              "formalization",
+              "computation"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "pattern": "^research/artifacts/candidates/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
         }
       }
     },
@@ -111,34 +273,97 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["claim_id", "text", "status"],
+        "required": [
+          "claim_id",
+          "text",
+          "status"
+        ],
         "properties": {
-          "claim_id": {"type": "string", "pattern": "^claim:[a-z0-9][a-z0-9.-]*$"},
-          "text": {"type": "string", "minLength": 1},
-          "status": {"const": "candidate"}
+          "claim_id": {
+            "type": "string",
+            "pattern": "^claim:[a-z0-9][a-z0-9.-]*$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "candidate"
+          }
         }
       }
     },
-    "assumptions": {"type": "array", "maxItems": 128, "items": {"type": "string", "minLength": 1}},
-    "risks": {"type": "array", "maxItems": 128, "items": {"type": "string", "minLength": 1}},
+    "assumptions": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "risks": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "open_obligations": {
       "type": "array",
       "uniqueItems": true,
-      "items": {"type": "string", "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"}
+      "items": {
+        "type": "string",
+        "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"
+      }
     },
     "failed_route_proposal": {
       "oneOf": [
-        {"type": "null"},
+        {
+          "type": "null"
+        },
         {
           "type": "object",
           "additionalProperties": false,
-          "required": ["route_fingerprint", "failure_class", "blocker", "evidence_locators", "next_obligation"],
+          "required": [
+            "route_fingerprint",
+            "failure_class",
+            "blocker",
+            "evidence_locators",
+            "next_obligation"
+          ],
           "properties": {
-            "route_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-            "failure_class": {"enum": ["counterexample", "contradiction", "timeout", "resource_error", "tool_error", "source_gap", "stalled", "duplicate"]},
-            "blocker": {"type": "string", "minLength": 1},
-            "evidence_locators": {"type": "array", "items": {"type": "string", "minLength": 1}},
-            "next_obligation": {"type": "string", "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"}
+            "route_fingerprint": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "failure_class": {
+              "enum": [
+                "counterexample",
+                "contradiction",
+                "timeout",
+                "resource_error",
+                "tool_error",
+                "source_gap",
+                "stalled",
+                "duplicate"
+              ]
+            },
+            "blocker": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence_locators": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "next_obligation": {
+              "type": "string",
+              "pattern": "^obligation:[a-z0-9][a-z0-9.-]*$"
+            }
           }
         }
       ]
@@ -150,12 +375,35 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["repository", "path", "revision", "relation"],
+        "required": [
+          "repository",
+          "path",
+          "revision",
+          "relation"
+        ],
         "properties": {
-          "repository": {"type": "string", "minLength": 1},
-          "path": {"type": "string", "minLength": 1},
-          "revision": {"type": "string", "minLength": 1},
-          "relation": {"enum": ["exact", "stronger", "weaker", "analogy", "prior_art", "unknown"]}
+          "repository": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "revision": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "enum": [
+              "exact",
+              "stronger",
+              "weaker",
+              "analogy",
+              "prior_art",
+              "unknown"
+            ]
+          }
         }
       }
     },
@@ -163,9 +411,55 @@
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
-      "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"}
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$"
+      }
     },
-    "verdict": {"const": "candidate_only"},
-    "created_at": {"type": "string", "format": "date-time"}
+    "verdict": {
+      "const": "candidate_only"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "admission_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "request_id",
+        "graph_id",
+        "obligation_id",
+        "route_id",
+        "attempt_id",
+        "problem_contract_sha256"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{3,120}$"
+        },
+        "graph_id": {
+          "type": "string",
+          "pattern": "^graph:"
+        },
+        "obligation_id": {
+          "type": "string",
+          "pattern": "^obligation:"
+        },
+        "route_id": {
+          "type": "string",
+          "pattern": "^route:"
+        },
+        "attempt_id": {
+          "type": "string",
+          "pattern": "^attempt:"
+        },
+        "problem_contract_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    }
   }
 }
