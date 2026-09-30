@@ -1,0 +1,24 @@
+{
+  "attempt_id": "attempt:pnp-migration-20260930",
+  "problem_id": "problem:millennium-p-vs-np",
+  "route_id": "route:pnp-migration-20260930",
+  "obligation_graph_id": "graph:pnp-migration-20260930",
+  "problem_contract_sha256": "4aa14c7f0b817aa82b7e158a13e0954788c5619cbba11592de96bc2939824c79",
+  "generator": "dot; model identity unverified",
+  "objective": "Request review of a bounded existing local lemma and source-compatible contract proposal; no root closure",
+  "method": "derivation",
+  "lifecycle": "planned",
+  "started_at": "2026-09-30T00:13:00Z",
+  "completed_at": null,
+  "inputs": [
+    "problem-library/records/canonical-problems.jsonl",
+    "research/artifacts/source-notes/migration-20260930/source-manifest.json"
+  ],
+  "claims": [
+    "For every finite non-tautological CNF F and pivot x, retain clauses omitting x and resolve every x-clause against every not-x-clause, deleting tautological resolvents. For every assignment of other variables, the resulting CNF is true exactly when some extension to x satisfies F. This asserts correctness, not a polynomial size bound."
+  ],
+  "artifacts": [
+    "research/artifacts/candidates/migration-20260930/research-draft.zh.md",
+    "research/artifacts/candidates/migration-20260930/experiment.py"
+  ]
+}

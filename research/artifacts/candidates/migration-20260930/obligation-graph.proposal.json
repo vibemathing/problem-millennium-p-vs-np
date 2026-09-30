@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "graph_id": "graph:pnp-migration-20260930",
+  "problem_id": "problem:millennium-p-vs-np",
+  "attempt_id": "attempt:pnp-migration-20260930",
+  "route_id": "route:pnp-migration-20260930",
+  "problem_contract_sha256": "4aa14c7f0b817aa82b7e158a13e0954788c5619cbba11592de96bc2939824c79",
+  "root_obligation_id": "obligation:pnp-migration-20260930-local",
+  "obligations": [
+    {
+      "obligation_id": "obligation:pnp-migration-20260930-local",
+      "kind": "lemma",
+      "statement": {
+        "text": "For every finite non-tautological CNF F and pivot x, retain clauses omitting x and resolve every x-clause against every not-x-clause, deleting tautological resolvents. For every assignment of other variables, the resulting CNF is true exactly when some extension to x satisfies F. This asserts correctness, not a polynomial size bound.",
+        "language": "en",
+        "formal_declaration": null
+      },
+      "statement_sha256": "53905d5ef88460a52e81918054c04ade3ae583cfd01df62fa52d1ba0eb80f2c5",
+      "dependencies": [
+        "obligation:pnp-migration-20260930-definition"
+      ],
+      "acceptance": {
+        "required_capabilities": [
+          "human_review",
+          "statement_faithfulness"
+        ],
+        "allowed_candidate_kinds": [
+          "proof",
+          "computation"
+        ]
+      },
+      "source_refs": [
+        "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+      ]
+    },
+    {
+      "obligation_id": "obligation:pnp-migration-20260930-definition",
+      "kind": "definition",
+      "statement": {
+        "text": "A CNF is a finite set of non-tautological clauses represented as sets of signed variables; satisfaction is conjunction of disjunctions, with empty-clause and empty-formula conventions.",
+        "language": "en",
+        "formal_declaration": null
+      },
+      "statement_sha256": "c4e3c475aca50935d5e2c1c4fb01006da433049294c499b755c283de517ca3ee",
+      "dependencies": [],
+      "acceptance": {
+        "required_capabilities": [
+          "human_review",
+          "statement_faithfulness"
+        ],
+        "allowed_candidate_kinds": [
+          "proof",
+          "computation"
+        ]
+      },
+      "source_refs": [
+        "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf"
+      ]
+    }
+  ],
+  "created_at": "2026-09-30T00:13:00Z",
+  "supersedes": null
+}

@@ -1,0 +1,122 @@
+{
+  "acceptance": {
+    "policy": "solution-admission-v1"
+  },
+  "aliases": [
+    "P versus NP",
+    "P vs NP"
+  ],
+  "allowed_axioms": [
+    "classical-mathematics",
+    "standard-Turing-machine-complexity-theory"
+  ],
+  "assumptions": [
+    "Only hypotheses explicitly present in the frozen official statement and the selected accepted branch are admitted.",
+    "Finite computation, restricted models, conditional lemmas and special cases do not close the universal root statement.",
+    "Statement-faithfulness and current-status review must close before Result admission."
+  ],
+  "constraints": {
+    "allowed_adapters": [
+      "source-fidelity-review-v1",
+      "lean-obligation-v1"
+    ],
+    "allowed_methods": [
+      "discovery",
+      "derivation",
+      "computation",
+      "proof",
+      "formalization"
+    ],
+    "max_attempts": 20,
+    "runtime": {
+      "max_output_bytes": 5242880,
+      "max_retries": 3,
+      "max_transitions": 300,
+      "timeout_seconds": 1800
+    }
+  },
+  "created_at": "2026-08-16T18:20:00+08:00",
+  "definitions": [
+    {
+      "definition": "Decision languages decidable by a deterministic Turing machine in polynomial time.",
+      "term": "P"
+    },
+    {
+      "definition": "Decision languages decidable by a nondeterministic Turing machine in polynomial time, equivalently with polynomial-time verifiable certificates in the standard model.",
+      "term": "NP"
+    }
+  ],
+  "domain": {
+    "description": "标准确定性与非确定性多带图灵机模型中的判定语言及多项式时间复杂度类。",
+    "objects": [
+      "decision languages over finite alphabets",
+      "deterministic multi-tape Turing machines",
+      "nondeterministic multi-tape Turing machines",
+      "polynomial-time bounds in input length"
+    ]
+  },
+  "lifecycle": "draft",
+  "msc": [
+    "68Q15"
+  ],
+  "problem_id": "problem:millennium-p-vs-np",
+  "quantifiers": [
+    {
+      "domain": "whether the complexity classes P and NP are equal",
+      "kind": "decide",
+      "variables": []
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "source": "Clay Mathematics Institute",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/millennium/p-vs-np/",
+      "revision": "retrieved-2026-09-30-sha256:67ab60f0d359995339bd9809a8adc1638c6ecb69f8d1433ad1327d1ec732b97b",
+      "content_sha256": "67ab60f0d359995339bd9809a8adc1638c6ecb69f8d1433ad1327d1ec732b97b",
+      "quote": "Unsolved",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Clay Mathematics Institute; page text",
+        "url": null
+      }
+    },
+    {
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "source": "Clay Mathematics Institute official problem descriptions",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/wp-content/uploads/2022/02/MPPc.pdf",
+      "revision": "retrieved-2026-09-30-sha256:7fb0391e8ea20db9102c022a9f6aa504d5436e644d0dffb6c9ed82f4f09af269",
+      "content_sha256": "7fb0391e8ea20db9102c022a9f6aa504d5436e644d0dffb6c9ed82f4f09af269",
+      "quote": "The present volume sets forth the official description of each of the seven problems",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Clay Mathematics Institute; J. Carlson, A. Jaffe and A. Wiles, editors, The Millennium Prize Problems",
+        "url": null
+      }
+    },
+    {
+      "source": "Stephen Cook, official problem description, Clay Mathematics Institute",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "revision": "retrieved-2026-09-30-sha256:018f3d473d16c35e807e8cdfbd0bed3ccf7a56452e3e10c6b1d84b56eaf2cf59",
+      "content_sha256": "018f3d473d16c35e807e8cdfbd0bed3ccf7a56452e3e10c6b1d84b56eaf2cf59",
+      "quote": "The P versus NP problem is to determine whether every language",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Stephen Cook, The P versus NP Problem, Clay Mathematics Institute",
+        "url": null
+      }
+    }
+  ],
+  "statement": {
+    "language": "zh-CN",
+    "text": "在标准确定性与非确定性多带图灵机模型、输入长度和多项式时间定义下，判定复杂度类 P 与 NP 是否相等。闭合方式只能是：给出对某个 NP 完全语言的确定性多项式时间算法并严格证明正确性与复杂度，从而证明 P=NP；或者严格证明存在 NP 语言不属于 P，从而证明 P≠NP。有限实例、oracle 模型、受限电路模型或经验求解器性能不能替代原命题。",
+    "version": 1
+  },
+  "title": "P 与 NP 问题",
+  "updated_at": "2026-09-30T00:13:00Z"
+}

@@ -1,0 +1,53 @@
+{
+  "python": "3.12.14",
+  "claim_ceiling": "bounded local regression only",
+  "pnp": {
+    "formulas": 3304,
+    "pointwise_projection_checks": 39648,
+    "full_order_checks": 19824,
+    "one_step_blowup": [
+      {
+        "k": 1,
+        "input_clauses": 2,
+        "resolvents": 1
+      },
+      {
+        "k": 2,
+        "input_clauses": 4,
+        "resolvents": 4
+      },
+      {
+        "k": 3,
+        "input_clauses": 6,
+        "resolvents": 9
+      },
+      {
+        "k": 4,
+        "input_clauses": 8,
+        "resolvents": 16
+      },
+      {
+        "k": 5,
+        "input_clauses": 10,
+        "resolvents": 25
+      },
+      {
+        "k": 6,
+        "input_clauses": 12,
+        "resolvents": 36
+      },
+      {
+        "k": 7,
+        "input_clauses": 14,
+        "resolvents": 49
+      },
+      {
+        "k": 8,
+        "input_clauses": 16,
+        "resolvents": 64
+      }
+    ],
+    "width_3_to_4_regression": true,
+    "width_regression_assignments": 16
+  }
+}
