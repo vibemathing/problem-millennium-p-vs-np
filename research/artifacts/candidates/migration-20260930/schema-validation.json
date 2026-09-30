@@ -1,0 +1,9 @@
+{
+  "ceiling": "local schema and digest check only; not admission",
+  "target": "pinned template 2.3.3 schemas from local inspection package",
+  "errors": {
+    "problem-contract.proposal.json": [],
+    "attempt.proposal.json": [],
+    "obligation-graph.proposal.json": []
+  }
+}

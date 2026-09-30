@@ -1,0 +1,50 @@
+{
+  "status": "source observations for review; not source-admission receipts",
+  "retrieved_at": "2026-09-30T00:13:00Z",
+  "hash_scope": "SHA-256 of complete HTTP response body bytes (HTML or PDF), not extracted text",
+  "rights_note": "Full source documents are not redistributed. Image-specific CC terms on the P/NP page are not a license for its body text. MPPc.pdf is a book cover/overview, not the mathematical chapter; added individual official chapter for exact statement review.",
+  "sources": [
+    {
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "source": "Clay Mathematics Institute",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/millennium/p-vs-np/",
+      "revision": "retrieved-2026-09-30-sha256:67ab60f0d359995339bd9809a8adc1638c6ecb69f8d1433ad1327d1ec732b97b",
+      "content_sha256": "67ab60f0d359995339bd9809a8adc1638c6ecb69f8d1433ad1327d1ec732b97b",
+      "quote": "Unsolved",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Clay Mathematics Institute; page text",
+        "url": null
+      }
+    },
+    {
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "source": "Clay Mathematics Institute official problem descriptions",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/wp-content/uploads/2022/02/MPPc.pdf",
+      "revision": "retrieved-2026-09-30-sha256:7fb0391e8ea20db9102c022a9f6aa504d5436e644d0dffb6c9ed82f4f09af269",
+      "content_sha256": "7fb0391e8ea20db9102c022a9f6aa504d5436e644d0dffb6c9ed82f4f09af269",
+      "quote": "The present volume sets forth the official description of each of the seven problems",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Clay Mathematics Institute; J. Carlson, A. Jaffe and A. Wiles, editors, The Millennium Prize Problems",
+        "url": null
+      }
+    },
+    {
+      "source": "Stephen Cook, official problem description, Clay Mathematics Institute",
+      "source_record_id": null,
+      "url": "https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf",
+      "retrieved_at": "2026-09-30T00:13:00Z",
+      "revision": "retrieved-2026-09-30-sha256:018f3d473d16c35e807e8cdfbd0bed3ccf7a56452e3e10c6b1d84b56eaf2cf59",
+      "content_sha256": "018f3d473d16c35e807e8cdfbd0bed3ccf7a56452e3e10c6b1d84b56eaf2cf59",
+      "quote": "The P versus NP problem is to determine whether every language",
+      "license": {
+        "name": "No general redistribution license identified; rights review pending",
+        "attribution": "Stephen Cook, The P versus NP Problem, Clay Mathematics Institute",
+        "url": null
+      }
+    }
+  ]
+}
